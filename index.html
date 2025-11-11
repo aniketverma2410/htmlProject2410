@@ -1,106 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Awesome Website</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; }
-    h1, h2 { color: #333; }
-    table, th, td { border: 1px solid black; border-collapse: collapse; padding: 8px; }
-    footer { margin-top: 40px; padding: 20px; background: #ddd; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundry Wallah / Laundry Mart</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#1e40af', // Darker Blue
+                        'secondary-cyan': '#06b6d4', // Bright Cyan/Aqua
+                        'background-light': '#f8fafc', // Slate 50
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar styling for aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #06b6d4;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0e7490;
+        }
+        
+        .container-padding {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .container-padding {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+    </style>
 </head>
-<body>
+<body class="bg-background-light font-sans text-gray-800">
 
-  <!-- Header Section -->
-  <header>
-    <h1>Welcome to My Awesome Website!</h1>
-  </header>
+    <!-- Header Section -->
+    <header class="bg-primary-blue text-white shadow-xl py-6 md:py-8">
+        <div class="max-w-7xl mx-auto container-padding">
+            <!-- Welcoming Heading -->
+            <h1 class="text-3xl md:text-5xl font-extrabold text-center tracking-tight">
+                Welcome to Laundry Wallah / Laundry Mart
+            </h1>
+        </div>
+    </header>
 
-  <!-- About Section -->
-  <section>
-    <h2>About Us</h2>
-    <p>
-      Welcome to our website! We provide high-quality digital solutions tailored to your needs. Our mission is to deliver exceptional services that enhance your online presence and help you achieve your goals. Whether you're looking for web development, graphic design, or digital marketing, our team is here to help. We value creativity, innovation, and customer satisfaction. Explore our services below and get in touch today!
-    </p>
-  </section>
+    <main class="max-w-7xl mx-auto container-padding mt-10 space-y-16 pb-16">
 
-  <!-- Image Section -->
-  <section>
-    <h2>Our Work</h2>
-    <img src="https://s3.us-east-2.wasabisys.com/srmehranclub/2022/11/41.png" alt="Sample Image" width="600">
-  </section>
+        <!-- About Section -->
+        <section id="about" class="p-6 bg-white rounded-xl shadow-lg transition duration-300 hover:shadow-2xl">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-primary-blue border-b-2 border-secondary-cyan pb-2">About Us</h2>
+            <p class="leading-relaxed text-gray-600">
+                Laundry Wallah / Laundry Mart is your premier partner in garment care, dedicated to simplifying your life through exceptional laundry services. We utilize state-of-the-art, eco-friendly washing technologies and high-quality, gentle cleaning agents to ensure every item, from everyday wear to delicate garments, is treated with the utmost care. Our mission is to deliver perfectly clean, fresh, and neatly finished clothes right back to you, saving you time and effort. We pride ourselves on reliability, transparency, and a commitment to customer satisfaction, making us the trusted choice for busy professionals and families alike in the city.
+            </p>
+        </section>
 
-  <!-- Services Section -->
-  <section>
-    <h2>Our Services</h2>
-    <ul>
-      <li>Web Design and Development</li>
-      <li>Graphic Design</li>
-      <li>SEO and Digital Marketing</li>
-      <li>Content Creation</li>
-      <li>Social Media Management</li>
-    </ul>
-  </section>
+        <!-- Image Section -->
+        <section id="image" class="rounded-xl overflow-hidden shadow-2xl">
+            <!-- Placeholder image for a modern laundry setting -->
+            <img 
+                src="https://placehold.co/1200x400/1e40af/ffffff?text=Modern+Laundry+Service" 
+                alt="Image of a modern laundry facility or clean clothes" 
+                class="w-full h-auto object-cover"
+                onerror="this.onerror=null; this.src='https://placehold.co/1200x400/e0f2f1/064e3b?text=Laundry+Mart'"
+            >
+        </section>
 
-  <!-- Video Section -->
-  <section>
-    <h2>Watch Our Introduction</h2>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-  </section>
+        <!-- Services Section & Price List Section (Combined for better flow) -->
+        <div class="grid md:grid-cols-2 gap-10">
 
-  <!-- Price List Section -->
-  <section>
-    <h2>Price List</h2>
-    <table>
-      <tr>
-        <th>Service</th>
-        <th>Price</th>
-      </tr>
-      <tr>
-        <td>Web Design and Development</td>
-        <td>$500</td>
-      </tr>
-      <tr>
-        <td>Graphic Design</td>
-        <td>$300</td>
-      </tr>
-      <tr>
-        <td>SEO and Digital Marketing</td>
-        <td>$400</td>
-      </tr>
-      <tr>
-        <td>Content Creation</td>
-        <td>$200</td>
-      </tr>
-      <tr>
-        <td>Social Media Management</td>
-        <td>$250</td>
-      </tr>
-    </table>
-  </section>
+            <!-- Services Section -->
+            <section id="services" class="p-6 bg-white rounded-xl shadow-lg">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 text-primary-blue border-b-2 border-secondary-cyan pb-2">Our Services</h2>
+                <ul class="space-y-2 text-lg list-disc pl-5 text-gray-700">
+                    <li class="hover:text-secondary-cyan transition-colors">Washing and Drying (Standard Load)</li>
+                    <li class="hover:text-secondary-cyan transition-colors">Ironing and Folding (Per Piece)</li>
+                    <li class="hover:text-secondary-cyan transition-colors">Dry Cleaning (Professional Garments)</li>
+                    <li class="hover:text-secondary-cyan transition-colors">Stain Removal Treatment</li>
+                    <li class="hover:text-secondary-cyan transition-colors">Express Services (24-Hour Turnaround)</li>
+                    <li class="hover:text-secondary-cyan transition-colors">Special Garment Care (Silk, Wool, Leather)</li>
+                    <li class="hover:text-secondary-cyan transition-colors">Curtain and Home Linen Cleaning</li>
+                </ul>
+            </section>
 
-  <!-- Form Section -->
-  <section>
-    <h2>Contact Us</h2>
-    <form>
-      <label for="name">Name:</label><br>
-      <input type="text" id="name" name="name" required><br><br>
+            <!-- Price List Section -->
+            <section id="prices" class="p-6 bg-white rounded-xl shadow-lg">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 text-primary-blue border-b-2 border-secondary-cyan pb-2">Price List</h2>
+                
+                <!-- Table with border -->
+                <table class="w-full border-collapse border border-gray-300 text-left">
+                    <thead>
+                        <tr class="bg-gray-100">
+                            <th class="border border-gray-300 p-3 font-semibold text-gray-800">Service</th>
+                            <th class="border border-gray-300 p-3 font-semibold text-gray-800">Price (INR)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Service 1: Washing and Drying -->
+                        <tr class="hover:bg-blue-50 transition-colors">
+                            <td class="border border-gray-300 p-3">Washing and Drying</td>
+                            <td class="border border-gray-300 p-3 font-mono text-primary-blue">Rs 10.00 / item</td>
+                        </tr>
+                        <!-- Service 2: Ironing and Folding -->
+                        <tr class="hover:bg-blue-50 transition-colors">
+                            <td class="border border-gray-300 p-3">Ironing and Folding</td>
+                            <td class="border border-gray-300 p-3 font-mono text-primary-blue">Rs 5.00 / item</td>
+                        </tr>
+                        <!-- Additional Services for Example -->
+                        <tr class="hover:bg-blue-50 transition-colors">
+                            <td class="border border-gray-300 p-3">Dry Cleaning</td>
+                            <td class="border border-gray-300 p-3 font-mono text-primary-blue">Rs 50.00 / item</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50 transition-colors">
+                            <td class="border border-gray-300 p-3">Express Service Surcharge</td>
+                            <td class="border border-gray-300 p-3 font-mono text-primary-blue">Rs 150.00 (flat)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
 
-      <label for="email">Email:</label><br>
-      <input type="email" id="email" name="email" required><br><br>
+        <!-- Book Now Section -->
+        <section id="book" class="p-8 bg-white rounded-xl shadow-2xl border-t-4 border-secondary-cyan">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-primary-blue">Book Now</h2>
+            
+            <form action="#" method="POST" class="space-y-6">
+                
+                <!-- Name Input Field -->
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        required 
+                        placeholder="Enter your full name"
+                        class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-secondary-cyan focus:border-secondary-cyan transition duration-150"
+                    >
+                </div>
 
-      <label for="phone">Phone:</label><br>
-      <input type="tel" id="phone" name="phone" required><br><br>
+                <!-- Email Input Field -->
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        required 
+                        placeholder="example@domain.com"
+                        class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-secondary-cyan focus:border-secondary-cyan transition duration-150"
+                    >
+                </div>
 
-      <input type="submit" value="Submit">
-    </form>
-  </section>
+                <!-- Phone Input Field -->
+                <div>
+                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                    <input 
+                        type="tel" 
+                        id="phone" 
+                        name="phone" 
+                        required 
+                        placeholder="+91-9876543210"
+                        class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-secondary-cyan focus:border-secondary-cyan transition duration-150"
+                    >
+                </div>
 
-  <!-- Footer Section -->
-  <footer>
-    <p>Contact us at: contact@awesomewebsite.com | Phone: +123-456-7890</p>
-  </footer>
+                <!-- Submit Button -->
+                <button 
+                    type="submit" 
+                    class="w-full md:w-auto px-6 py-3 bg-secondary-cyan text-white font-semibold rounded-lg shadow-md hover:bg-opacity-80 transition duration-300 transform hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-secondary-cyan focus:ring-opacity-50"
+                >
+                    Submit Booking
+                </button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-primary-blue text-white py-6 mt-10 shadow-inner">
+        <div class="max-w-7xl mx-auto container-padding text-center">
+            <!-- Contact Information Paragraph -->
+            <p class="text-sm md:text-base">
+                Contact us at: <a href="mailto:info@laundrymart.com" class="text-secondary-cyan hover:underline font-medium">info@laundrymart.com</a>
+            </p>
+            <p class="text-xs mt-2 opacity-75">&copy; 2025 Laundry Wallah / Laundry Mart. All rights reserved.</p>
+        </div>
+    </footer>
 
 </body>
 </html>

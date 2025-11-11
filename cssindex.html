@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundry Service - Hero Section</title>
+    <style>
+        /* 1. Global Reset and Font */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* 2. Viewport Control (Ensures no scroll on the main layout) */
+        html, body {
+            height: 100vh; /* Set HTML and Body to full viewport height */
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        /* --- Navbar Styling --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 10vh; /* Takes 10% of the viewport height */
+            background-color: #1e88e5; /* Primary Blue */
+            color: white;
+            padding: 0 5%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            padding: 0 15px;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: #b3e5fc; /* Lighter blue on hover */
+        }
+
+        .user-name {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* --- Hero Section Styling --- */
+        .hero-section {
+            display: flex;
+            height: 90vh; /* Takes the remaining 90% of the viewport height */
+            background-color: #f5f5f5; /* Light background */
+        }
+
+        /* Left Content Div */
+        .hero-left {
+            flex: 1; /* Takes half the width */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0 5%;
+        }
+
+        .hero-heading {
+            font-size: 3.5rem; /* Large heading */
+            color: #1e88e5; /* Primary Blue */
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: #424242;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+
+        .book-button {
+            padding: 15px 30px;
+            background-color: #4caf50; /* Green Button */
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .book-button:hover {
+            background-color: #388e3c; /* Darker green on hover */
+            transform: translateY(-2px);
+        }
+
+        /* Right Image Div */
+        .hero-right {
+            flex: 1; /* Takes half the width */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e3f2fd; /* Very light blue background for the image area */
+        }
+
+        .hero-image {
+            width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0 20px;
+            }
+            .nav-links {
+                display: none; /* Hide links on mobile for simplicity */
+            }
+            .hero-section {
+                flex-direction: column; /* Stack vertically */
+                height: auto; /* Allow content to adjust height */
+                overflow-y: auto; /* Re-enable scroll if content is too long */
+                min-height: 90vh; /* Ensure it still tries to fill the space */
+            }
+            .hero-left {
+                padding: 40px 5%;
+                text-align: center;
+                align-items: center;
+            }
+            .hero-heading {
+                font-size: 2.5rem;
+            }
+            .hero-right {
+                padding: 40px 5%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- 1. Navbar Section -->
+    <nav class="navbar">
+        <div class="logo">
+            <span style="color: #ffc107;">🧺</span> Laundry Mart
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+        
+        <div class="user-name">
+            Hello, Jane Doe
+        </div>
+    </nav>
+
+    <!-- 2. Hero Section -->
+    <div class="hero-section">
+        
+        <!-- Left Div: Heading, Description, and Button -->
+        <div class="hero-left">
+            <h1 class="hero-heading">
+                Professional Laundry, Delivered to Your Door.
+            </h1>
+            <p class="hero-description">
+                Tired of endless washing and folding? We offer quick, reliable, and eco-friendly garment care, from standard wash-and-fold to professional dry cleaning. Spend less time on chores and more time enjoying your life.
+            </p>
+            <a href="#booking" class="book-button">Book a Service Today</a>
+        </div>
+        
+        <!-- Right Div: Image -->
+        <div class="hero-right">
+            <!-- Placeholder for a laundry image (use object-fit: contain to handle sizing) -->
+            <img 
+                src="https://placehold.co/600x450/1e88e5/ffffff?text=Professional+Laundry+Image" 
+                alt="Image representing professional laundry services"
+                class="hero-image"
+            >
+        </div>
+        
+    </div>
+
+</body>
+</html>
